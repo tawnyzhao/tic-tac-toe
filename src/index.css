@@ -39,6 +39,11 @@ ol, ul {
   outline: none;
 }
 
+.toggle-button {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
 .kbd-navigation .square:focus {
   background: #ddd;
 }
