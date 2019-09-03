@@ -4,7 +4,9 @@ import "./index.css";
 
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick} style={props.highlighted ? { backgroundColor: "#decf4b" } : { backgroundColor: "#ffffff" }}>
+    <button 
+      className = {`${props.highlighted ? "highlight" : ""} square`}
+      onClick={props.onClick}>
       {props.value}
     </button>
   );
@@ -136,11 +138,27 @@ class Game extends React.Component {
   }
 
   toggleGameMode() {
+    this.resetGame();
     this.setState({
       playingVersusAI: !this.state.playingVersusAI,
     });
+    
   }
 
+  resetGame() {
+    this.setState({
+      history: [
+        {
+          squares: Array(9).fill(null),
+          change: null,
+        }
+      ],
+      stepNumber: 0,
+      xIsNext: true,
+      reversedHistory: false,
+      playingVersusAI: true,
+    });
+  }
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];

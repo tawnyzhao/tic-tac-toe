@@ -62,3 +62,9 @@ ol, ul {
 .game-info {
   padding-top: 20px;
 }
+
+.highlight {
+  background: #decf4b;
+  color:white;
+  font-weight: bold;
+}
